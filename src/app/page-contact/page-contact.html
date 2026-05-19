@@ -1,0 +1,65 @@
+<app-layout-page>
+      <!-- Slot en-tête -->
+      <div en-tete class="flex items-center gap-3">
+        <div class="text-3xl">📞</div>
+        <div>
+          <h1 class="text-3xl font-bold">Contactez-nous</h1>
+          <p class="text-green-200 mt-1">On est là pour vous aider !</p>
+        </div>
+      </div>
+
+      <!-- Slot contenu principal -->
+      <div contenu>
+        <div class="space-y-6">
+          <!-- Formulaire de contact -->
+          <div class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                <input type="text" placeholder="Jean Mbarga"
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input type="email" placeholder="jean@email.com"
+                       class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea rows="4" placeholder="Votre message..."
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500"></textarea>
+            </div>
+
+            <button class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition">
+              Envoyer le message
+            </button>
+          </div>
+
+          <!-- Infos contact -->
+          <div class="bg-gray-50 rounded-lg p-4 space-y-3">
+            <h3 class="font-semibold text-lg">Nos coordonnées</h3>
+            <div class="flex items-center gap-3 text-gray-600">
+              <span>📍</span>
+              <span>Akwa, Douala - Cameroun</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-600">
+              <span>📧</span>
+              <span>contact@cameroun.com</span>
+            </div>
+            <div class="flex items-center gap-3 text-gray-600">
+              <span>📱</span>
+              <span>+237 6XX XXX XXX / +237 6XX XXX XXX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slot pied de page -->
+      <div pied class="flex items-center gap-2">
+        <span>📧 Email: contact@cameroun.com</span>
+        <span>•</span>
+        <span>⏰ Lun-Ven: 8h-18h</span>
+      </div>
+    </app-layout-page>

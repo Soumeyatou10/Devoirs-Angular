@@ -1,0 +1,41 @@
+  <div class="min-h-screen bg-gray-100 py-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <!-- En-tête -->
+        <div class="text-center mb-8">
+          <h1 class="text-3xl font-bold text-gray-800 mb-2">
+            📱 Mon Profil Connecté
+          </h1>
+          <p class="text-gray-600">
+            Modification en temps réel avec Two-Way Binding
+          </p>
+          <div class="mt-2 inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+            🔄 Synchronisation instantanée
+          </div>
+        </div>
+        
+        <!-- Grille : Éditeur + Aperçu -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Éditeur -->
+          <app-editeur-profil
+            [(nom)]="nomUtilisateur"
+            [(age)]="ageUtilisateur"
+            [(bio)]="bioUtilisateur"
+          />
+          
+          <!-- Aperçu -->
+          <app-apercu-profil
+            [nom]="nomUtilisateur"
+            [age]="ageUtilisateur"
+            [bio]="bioUtilisateur"
+          />
+        </div>
+        
+        <!-- Stats en direct -->
+        <div class="mt-8 p-4 bg-white rounded-lg shadow text-center">
+          <p class="text-sm text-gray-600">
+            🚀 Mise à jour en temps réel • 
+            Dernière modification : {{ dateMAJ | date:'HH:mm:ss' }}
+          </p>
+        </div>
+      </div>
+    </div>

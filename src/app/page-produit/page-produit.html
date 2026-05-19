@@ -1,0 +1,39 @@
+<div class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg">
+      <!-- Produit -->
+      <div class="text-center mb-6">
+        <div class="text-6xl mb-3">📱</div>
+        <h2 class="text-2xl font-bold text-gray-800">Samsung Galaxy S24 Ultra</h2>
+        <p class="text-2xl font-bold text-red-600 mt-2">850 000 FCFA</p>
+      </div>
+      
+      <!-- Système de notation -->
+      <div class="border-t border-b py-6 my-4">
+        <h3 class="font-semibold text-lg mb-3">Notez ce produit 🇨🇲</h3>
+        <app-notation (noteChoisie)="afficherNote($event)" />
+      </div>
+      
+      <!-- Message du parent -->
+      @if (derniereNote) {
+        <div class="mt-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg text-center">
+          <p class="text-lg">
+            🎉 Vous avez donné 
+            <span class="font-bold text-orange-600 text-xl">{{ derniereNote }}/5</span> 
+            à ce produit
+          </p>
+          <p class="text-sm text-gray-600 mt-1">
+            @switch (derniereNote) {
+              @case (5) { 🔥 Merci pour cette excellente note ! }
+              @case (4) { 👍 Très bon choix ! }
+              @case (3) { 🙂 Merci pour votre avis }
+              @case (2) { 😕 On va s'améliorer }
+              @case (1) { 😢 Désolé que ça ne vous ait pas plu }
+            }
+          </p>
+        </div>
+      }
+      
+      <!-- Avis des autres clients -->
+      <div class="mt-6 text-center text-sm text-gray-500">
+        <p>🔹 128 avis clients 🔹 Note moyenne : 4.2/5 🔹</p>
+      </div>
+    </div>

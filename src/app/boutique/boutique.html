@@ -1,0 +1,49 @@
+ <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">
+          🛍️ Ma Boutique Camerounaise
+        </h1>
+        <p class="text-gray-600">Prix en FCFA - Livraison gratuite à Douala et Yaoundé 🇨🇲</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Produit 1 : Smartphone en promotion -->
+        <app-produit
+          [nom]="'Samsung Galaxy S24 Ultra'"
+          [prix]="850000"
+          [stock]="5"
+          [promotion]="true"
+        />
+        
+        <!-- Produit 2 : Casque audio, stock faible -->
+        <app-produit
+          [nom]="'AirPods Pro 2'"
+          [prix]="250000"
+          [stock]="3"
+        />
+        
+        <!-- Produit 3 : Chargeur, en rupture -->
+        <app-produit
+          [nom]="'Chargeur Rapide 65W USB-C'"
+          [prix]="35000"
+          [stock]="0"
+        />
+        
+        <!-- Bonus : Produit 4 sans promotion -->
+        <app-produit
+          [nom]="'Sac à Dos Ordinateur'"
+          [prix]="45000"
+          [stock]="12"
+        />
+      </div>
+      
+      <!-- Info livraison -->
+      <div class="mt-12 bg-gradient-to-r from-green-50 to-yellow-50 rounded-lg p-6 text-center">
+        <p class="text-gray-700">
+          🚚 Livraison express disponible à Douala, Yaoundé, Garoua et Bafoussam
+        </p>
+        <p class="text-sm text-gray-500 mt-2">
+          Paiement sécurisé : Mobile Money, Orange Money, ou livraire à la livraison
+        </p>
+      </div>
+    </div>

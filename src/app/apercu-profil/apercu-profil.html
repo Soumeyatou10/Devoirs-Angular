@@ -1,0 +1,66 @@
+
+     <div class="bg-gradient-to-br from-green-50 to-yellow-50 rounded-xl shadow-md p-6">
+      <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+        👤 Aperçu du profil
+        <span class="text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Live</span>
+      </h3>
+      
+      @if (estVide()) {
+        <div class="text-center py-8 text-gray-400">
+          <div class="text-5xl mb-2">👋</div>
+          <p>Remplissez le formulaire pour voir l'aperçu</p>
+        </div>
+      } @else {
+        <div class="space-y-3">
+          <!-- Nom -->
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">📝</div>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-wide">Nom</p>
+              <p class="font-semibold text-gray-800">
+                {{ nom() || 'Non renseigné' }}
+              </p>
+            </div>
+          </div>
+          
+          <!-- Âge -->
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">🎂</div>
+            <div>
+              <p class="text-xs text-gray-500 uppercase tracking-wide">Âge</p>
+              <p class="font-semibold text-gray-800">
+                @if (age()) {
+                  {{ age() }} ans - 
+                  @if (age()! < 18) { 🧒 Mineur }
+                  @else if (age()! < 30) { 🧑 Jeune adulte }
+                  @else if (age()! < 50) { 👨 Adulte }
+                  @else { 👴 Sage }
+                } @else {
+                  Non renseigné
+                }
+              </p>
+            </div>
+          </div>
+          
+          <!-- Bio -->
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">💬</div>
+            <div class="flex-1">
+              <p class="text-xs text-gray-500 uppercase tracking-wide">Bio</p>
+              <p class="text-gray-700 italic">
+                @if (bio()) {
+                  "{{ bio() }}"
+                } @else {
+                  Aucune bio pour le moment
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Badge localisation -->
+        <div class="mt-4 pt-3 border-t border-green-200 text-center text-sm text-green-700">
+          🇨🇲 Camerounais fièrement représenté
+        </div>
+      }
+    </div>

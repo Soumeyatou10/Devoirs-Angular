@@ -1,0 +1,29 @@
+<div class="min-h-screen bg-gradient-to-br from-green-50 to-yellow-50">
+      <!-- En-tête -->
+      <header class="bg-gradient-to-r from-green-700 to-green-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+          <ng-content select="[en-tete]" />
+        </div>
+      </header>
+
+      <!-- Contenu principal -->
+      <main class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <ng-content select="[contenu]" />
+        </div>
+      </main>
+
+      <!-- Pied de page -->
+      <footer class="bg-gray-800 text-gray-300 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <ng-content select="[pied]" />
+            <div class="text-sm">
+              © 2024 - 🇨🇲 Cameroun
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  `,
+  

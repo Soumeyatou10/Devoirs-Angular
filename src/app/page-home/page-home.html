@@ -1,0 +1,41 @@
+<app-layout-page>
+      <!-- Slot en-tête -->
+      <div en-tete class="flex items-center gap-3">
+        <div class="text-3xl">🏠</div>
+        <div>
+          <h1 class="text-3xl font-bold">Bienvenue au Cameroun</h1>
+          <p class="text-green-200 mt-1">L'Afrique en miniature</p>
+        </div>
+      </div>
+
+      <!-- Slot contenu principal -->
+      <div contenu>
+        <div class="space-y-6">
+          <!-- Hero -->
+          <div class="text-center py-8 bg-gradient-to-r from-green-100 to-yellow-100 rounded-lg">
+            <div class="text-6xl mb-4">🇨🇲</div>
+            <h2 class="text-2xl font-bold text-gray-800">Notre beau pays</h2>
+            <p class="text-gray-600 mt-2">Découvrez les merveilles du Cameroun</p>
+          </div>
+
+          <!-- Grille d'infos -->
+          <div class="grid md:grid-cols-3 gap-4">
+            @for (item of infos; track item.titre) {
+              <div class="bg-gray-50 rounded-lg p-4 text-center hover:shadow-md transition-shadow">
+                <div class="text-4xl mb-2">{{ item.emoji }}</div>
+                <h3 class="font-semibold">{{ item.titre }}</h3>
+                <p class="text-sm text-gray-600 mt-1">{{ item.description }}</p>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Slot pied de page -->
+      <div pied class="flex items-center gap-2">
+        <span>📍 Douala - Yaoundé - Garoua</span>
+        <span>•</span>
+        <span>📞 +237 655 918 256</span>
+      </div>
+    </app-layout-page>
+

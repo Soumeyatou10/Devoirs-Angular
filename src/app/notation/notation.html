@@ -1,0 +1,30 @@
+    <div class="flex flex-col items-center gap-2">
+      <div class="flex gap-2">
+        @for (etoile of etoiles; track $index) {
+          <button
+            (click)="noter($index + 1)"
+            (mouseenter)="survoler($index + 1)"
+            (mouseleave)="quitterSurvol()"
+            class="text-3xl transition-transform hover:scale-110 focus:outline-none"
+            [class.text-yellow-400]="estActive($index + 1)"
+            [class.text-gray-300]="!estActive($index + 1)"
+          >
+            ⭐
+          </button>
+        }
+      </div>
+      
+      <p class="text-sm text-gray-600">
+        @if (noteSurvolee) {
+          @if (noteSurvolee === 1) { ⭐ Très mauvais }
+          @else if (noteSurvolee === 2) { ⭐⭐ Mauvais }
+          @else if (noteSurvolee === 3) { ⭐⭐⭐ Correct }
+          @else if (noteSurvolee === 4) { ⭐⭐⭐⭐ Bien }
+          @else if (noteSurvolee === 5) { ⭐⭐⭐⭐⭐ Excellent ! }
+        } @else if (noteActuelle) {
+          Vous avez noté : {{ noteActuelle }}/5
+        } @else {
+          Cliquez sur une étoile pour noter 🇨🇲
+        }
+      </p>
+    </div>
